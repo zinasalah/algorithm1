@@ -1,0 +1,26 @@
+FUNCTION dot_product(v1,v2 : ARRAY_OF FLOAT[2];) : FLOAT
+VAR
+    i,j:INTEGER;
+    PS:FLOAT
+BEGIN
+    FOR i FROM 0 TO v1.length DO
+        FOR j FROM 0 TO v2.length  DO
+PS:PS+v1[i]*v2[j];
+        END_FOR
+    END_FOR
+    RETURN PS ;
+END
+ALGORITHM Orthogonal
+VAR v1,v2 : ARRAY_OF FLOAT;
+PS:FLOAT
+BEGIN
+write(give verctors v1);
+read(v1);
+write(give verctors v2);
+read(v2);
+PS:=dot_product(v1,v2)
+IF (PS=0) THEN
+    write(vectors are orthogonal)
+    ELSE
+    write(vectors are not orthogonal)
+END_IF
